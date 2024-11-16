@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="code-container">
+    <p class="header">Присоединитесь к группе по коду</p>
+    <div class="label">
+      <div class="flex flex-row code-input" style="gap: 10px;">
+        <input (input)="inputHandler(1, $event)" type="tel" maxlength="1" pattern="[A-Z0-9]" class="form-control" #inputElement>
+        <input (input)="inputHandler(2, $event)" type="tel" maxlength="1" pattern="[A-Z0-9]" class="form-control" #inputElement>
+        <input (input)="inputHandler(3, $event)" type="tel" maxlength="1" pattern="[A-Z0-9]" class="form-control" #inputElement>
+        <input (input)="inputHandler(4, $event)" type="tel" maxlength="1" pattern="[A-Z0-9]" class="form-control" #inputElement>
+        <input (input)="inputHandler(5, $event)" type="tel" maxlength="1" pattern="[A-Z0-9]" class="form-control" #inputElement>
+        <input (input)="inputHandler(6, $event)" type="tel" maxlength="1" pattern="[A-Z0-9]" class="form-control" #inputElement>
+      </div>
+    </div>
+
+    @if (error) {
+      <div class="error-container">
+        <p>Ошибка</p>
+        <p>{{error}}</p>
+      </div>
+    }
+
+    <button (click)="join()" class="solid-button btn">
+      <p>Join</p>
+      <svg width="33" height="11" viewBox="0 0 33 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.83334 5.5L31.1667 5.5M31.1667 5.5L27.1667 1.5M31.1667 5.5L27.1667 9.5" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="big-container" style="gap: 20px;">
+    <div class="small-container" style="gap: 20px;">
+      <div class="create">
+        <p class="title">Создать равное разделение</p>
+        <p class="about">Подходит для поездки на такси</p>
+        <a routerLink="/home/create/same"><button>Создать</button></a>
+      </div>
+
+      <div class="create">
+        <p class="title">Создать неравное разделение</p>
+        <p class="about">Подходит для похода в ресторан, в магазин</p>
+        <a routerLink="/home/create/different"><button>Создать</button></a>
+      </div>
+    </div>
+
+    <div class="create">
+      <p class="title">Создать сложное разделение</p>
+      <p class="about">При сложном разделении внутри можно будет добавить множество платежей, в которых будут участвовать некоторые пользователи </p>
+      <p class="about">Подходит для долгих поездок на каникулы или сложных разделений</p>
+      <a routerLink="/home/create/hard"><button>Создать</button></a>
+    </div>
+  </div>
+</div>

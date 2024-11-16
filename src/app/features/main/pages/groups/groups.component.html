@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Ваши группы</h1>
+
+  <div class="buttons-row" style="gap: 20px;">
+    <button class="payment-button" [class.active-button]="activeFilter == ''" (click)="activeFilter = ''">Все</button>
+    <button class="payment-button" [class.active-button]="activeFilter == 'equal'" (click)="activeFilter = 'equal'">Равный</button>
+    <button class="payment-button" [class.active-button]="activeFilter == 'nonequal'" (click)="activeFilter = 'nonequal'">Неравный</button>
+    <button class="payment-button" [class.active-button]="activeFilter == 'group'" (click)="activeFilter = 'group'">Сложный</button>
+  </div>
+
+  <ul class="groups-list">
+    @for (group of groups | groupsFilter : activeFilter; track groups) {
+      <li (click)="router.navigate(['/home/group/'+group.id])" class="group-item">
+        <span class="group-name">{{ group.title }}</span>
+        <span class="group-money">{{ group.type }}</span>
+      </li>
+    } @empty {
+      <p>You have no groups created</p>
+    }
+  </ul>
+</div>

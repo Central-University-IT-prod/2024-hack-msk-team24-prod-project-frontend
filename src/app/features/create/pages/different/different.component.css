@@ -1,0 +1,92 @@
+@import "../../../auth/pages/login/login.component.css";
+
+.container {
+  display: flex;
+  width:   100%;
+  height: fit-content!important;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.photo-uploader {
+  width:          100%;
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  margin:         10px 0 0;
+
+  .custom-file-upload {
+    width:            100%;
+    display:          block;
+    padding:          10px 20px;
+    cursor:           pointer;
+    border:           1px solid var(--accent-color-2);
+    border-radius:    5px;
+    color:            var(--accent-color-2);
+    background-color: var(--primary-color);
+    transition:       background-color 0.3s;
+
+    &:hover {
+      background-color: var(--accent-color-2);
+      color:            var(--primary-color);
+    }
+
+    input { display: none !important; caret-color: transparent !important; }
+  }
+
+  .preview {
+    margin:         20px 0;
+    width:          100%;
+    border:         1px solid var(--primary-color);
+    border-radius:  16px;
+    padding:        15px;
+    display:        flex;
+    flex-direction: column;
+    gap:            10px;
+
+    .products {
+      display:        flex;
+      flex-direction: column;
+      gap:            20px;
+    }
+
+    .product {
+      width:           100%;
+      display:         flex;
+      flex-direction:  row;
+      justify-content: space-between;
+      align-items:     center;
+      background:      var(--primary-color);
+      border-radius:   8px;
+      color:           var(--secondary-color);
+      padding:         15px;
+      min-height:      50px;
+      gap: 20px;
+      overflow:        hidden;
+
+      .info {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        transform: translateX(35px);
+        transition-duration: .3s;
+
+        p { color: var(--accent-color-2); }
+
+        svg { cursor: pointer; fill: #ff3838; }
+      }
+
+      &:hover {
+        .info { transform: translateX(0); }
+      }
+    }
+  }
+}
+
+* {
+  caret-color: transparent;
+}
+
+input {
+  caret-color: var(--accent-color-1) !important;
+}

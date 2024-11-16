@@ -1,0 +1,32 @@
+/* VARIABLES */
+
+:root { /* fonts */
+  --ff-secondary:       "Roboto";
+  --ff-primary: "PT Sans";
+}
+
+:root { /* colors */
+  --primary-color:        #ffffff;
+  --secondary-color:      #000000;
+  --accent-color-1:       #ffdc94;
+  --accent-color-2:       #007BFF;
+  --accent-color-3:       #2C3E50;
+
+  --text-primary:         #ffffff;
+  --text-secondary:       #a7a7a7;
+  --text-neutral:         #c8c8c8;
+
+  --background-primary:   #144675;
+  --background-secondary: #668eca;
+  --background-neutral:   #141414;
+}
+
+:root { /* sizes */
+  --side-bar-width: 300px;
+  --header-height:  80px;
+}
+
+:root { /* transition duration times */
+  --slow-transition-time: .6s;
+  --fast-transition-time: .3s;
+}

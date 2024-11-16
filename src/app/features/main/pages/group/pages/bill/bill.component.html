@@ -1,0 +1,25 @@
+<div class="container">
+  <ul class="groups-list">
+    @for (product of products; track products) {
+      <li class="group-item">
+        <div class="info">
+          <span class="group-name">{{ product.name }}</span>
+          <div class="flex flex-row" style="gap: 5px;">
+            <span class="group-money">{{ product.price }}₽</span>
+            <span class="group-money">{{ product.quantity }}</span>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <p>Введите количество, которое взяли вы</p>
+          <input (input)="handleProductQuantityInput(product, $event)" [max]="product.quantity">
+        </div>
+      </li>
+    } @empty {
+      <p>You have no groups created</p>
+    }
+  </ul>
+  <button (click)="postProducts()" class="solid-button btn" style="max-width: 500px; margin-top: 20px;">
+    <p>Подтвердить</p>
+  </button>
+</div>

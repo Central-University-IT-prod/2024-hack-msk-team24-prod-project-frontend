@@ -1,0 +1,22 @@
+.solid-button {
+  display:         flex;
+  flex-direction:  row;
+  align-items:     center;
+  align-content:   center;
+  justify-content: center;
+  gap:             15px;
+  padding:         7px 15px;
+  background:      var(--accent-color-1);
+  border-radius:   999px;
+
+  p,a {
+    color:       var(--secondary-color);
+    font-size:   14px;
+    font-weight: 600;
+    line-height: 95%;
+  }
+
+  svg {
+    height: 100%;
+  }
+}

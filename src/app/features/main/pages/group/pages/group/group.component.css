@@ -1,0 +1,206 @@
+@import "../../../../../create/pages/different/different.component.css";
+@import "../../../../../auth/pages/code/code.component.css";
+
+.container {
+  all:            unset;
+  width:          100%;
+  max-width:      800px;
+  margin:         0 auto;
+  padding:        20px;
+  display:        flex;
+  flex-direction: column;
+  gap:            20px;
+
+  .title {
+    font-size:      30px;
+    font-weight:    600;
+    text-transform: capitalize;
+  }
+
+  .buttons-container {
+    padding:         10px;
+    background:      rgba(0, 0, 0, .3);
+    backdrop-filter: blur(5px);
+    width:           100%;
+    height:          fit-content;
+    display:         flex;
+    flex-direction:  row;
+    gap:             20px;
+    border-radius:   8px;
+
+    .btn {
+      background:      var(--accent-color-2);
+      color:           var(--primary-color); /* White text */
+      padding:         10px 32px; /* Padding for button size */
+      text-align:      center; /* Center text */
+      text-decoration: none; /* No underline */
+      display:         inline-block; /* Allows setting width and height */
+      font-size:       16px; /* Font size */
+      margin:          4px 2px; /* Margin between buttons */
+      transition:      background-color 0.3s, transform 0.3s; /* Smooth transition */
+      border-radius:   8px; /* Rounded corners */
+
+      &:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+      }
+    }
+  }
+}
+
+.loader-container {
+  width:           100%;
+  height:          100vh;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  @media screen and (max-width: 900px) {
+    height: calc(100vh - 76px);
+  }
+
+  .loader {
+    width:          30px;
+    height:         30px;
+    text-align:     center;
+    padding:        1em;
+    display:        inline-block;
+    vertical-align: top;
+
+    svg path,
+    svg rect {
+      fill: var(--accent-color-1);
+    }
+  }
+}
+
+.bubbles {
+  display:         flex;
+  flex-direction:  row;
+  justify-content: flex-start;
+  gap:             40px;
+  margin-bottom:   30px;
+  overflow-x:      scroll;
+  color:           var(--accent-color-2);
+
+  @media screen and (max-width: 720px) {
+    gap: 10px;
+  }
+
+  button {
+    padding:               7px 25px;
+    font-size:             15px;
+    font-weight:           500;
+    border:                none;
+    outline:               none;
+    border-radius:         100px;
+    -moz-border-radius:    100px;
+    -webkit-border-radius: 100px;
+    background:            #e2e8f0;
+    user-select:           none;
+    cursor:                pointer;
+
+    @media screen and (max-width: 540px) {
+      font-size: 14px;
+      padding:   7px 20px;
+    }
+  }
+
+  .chosen {
+    background: var(--accent-color-2);
+    color:      var(--text-primary);
+  }
+}
+
+.content {
+  all:            unset;
+  width:          100%;
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+
+  .label {
+    max-width: 500px;
+  }
+}
+
+.groups-list {
+  display:        flex;
+  flex-direction: column;
+  width:          100%;
+
+  .group-item {
+    cursor:           pointer;
+    display:          flex;
+    justify-content:  space-between;
+    align-items:      center;
+    padding:          15px;
+    border-radius:    8px;
+    margin-bottom:    10px;
+    background-color: #f9f9f9;
+    box-shadow:       0 2px 10px rgba(0, 0, 0, 0.05);
+    transition:       background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      background-color: #e6f7ff;
+      transform:        translateY(-1px);
+    }
+
+    .group-name {
+      font-weight: bold;
+      color:       #333333;
+      font-size:   1.2em;
+    }
+
+    .group-money {
+      color:       var(--accent-color-2);
+      font-size:   1.2em;
+      font-weight: bold;
+    }
+  }
+}
+
+.payment-container {
+  width:   100%;
+  padding: 15px;
+}
+
+.code-container {
+  max-width:      600px;
+  width:          100%;
+  display:        flex;
+  align-items:    center;
+  flex-direction: column;
+  gap:            30px;
+  border-radius:  16px;
+
+  .header {
+    color:       var(--accent-color-1);
+    font-size:   30px;
+    font-weight: 600;
+  }
+
+  input {
+    border-color: var(--accent-color-1);
+    color:        var(--accent-color-1);
+
+    &:focus-within {
+      border-color: #ffcd67;
+      color:        #ffcd67;
+    }
+  }
+
+  button {
+    max-width: 300px;
+  }
+}
+
+.label > select {
+  width: 100% !important;
+  border-color: var(--primary-color) !important;
+  border-width: 1px !important;
+  background: var(--background-primary) !important;
+  color: var(--primary-color) !important;
+}
+
+:host {
+  caret-color: transparent;
+}

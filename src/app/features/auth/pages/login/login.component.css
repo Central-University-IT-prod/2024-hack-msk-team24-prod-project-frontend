@@ -1,0 +1,159 @@
+.container {
+  width:           100%;
+  height:          calc(100vh - var(--header-height));
+  display:         flex;
+  align-items:     center;
+  align-content:   center;
+  justify-content: center;
+  padding:         10px;
+}
+
+.error-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  background: rgba(0,0,0,.3);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+
+  p:nth-child(2) {
+    color: red;
+  }
+}
+
+.content {
+  max-width: 500px;
+  width:          100%;
+  display:        flex;
+  flex-direction: column;
+  gap:            20px;
+
+  .label {
+    width:               100%;
+    display:             flex;
+    flex-direction:      column;
+    gap:                 5px;
+    transition-duration: .3s;
+
+    label {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      width:               100%;
+      position:            relative;
+      padding:             10px;
+      border:              1px solid var(--primary-color);
+      border-radius:       8px;
+      transition-duration: .3s;
+
+      svg {
+        transition-duration: .3s;
+        fill:                var(--primary-color);
+      }
+
+      input {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        transition-duration: .3s;
+        color:               var(--primary-color);
+        position:            absolute;
+        left:                38px;
+        top:                 0;
+        height:              100%;
+        width:               calc(100% - 38px);
+        background:          transparent;
+        border:              none;
+        outline:             none;
+      }
+
+      &:focus-within {
+        border-color: var(--accent-color-1);
+
+        input { color: var(--accent-color-1); }
+
+        svg { fill: var(--accent-color-1); }
+      }
+    }
+
+    select {
+      width: 200px; /* Set width */
+      padding: 10px; /* Add padding */
+      border: 2px solid var(--secondary-color); /* Border color */
+      border-radius: 5px; /* Rounded corners */
+      background-color: #f8f9fa; /* Background color */
+      font-size: 16px; /* Font size */
+      color: #333; /* Text color */
+      appearance: none; /* Remove default styling */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="%23007BFF"/></svg>'); /* Custom arrow */
+      background-repeat: no-repeat; /* Prevent repeating */
+      background-position: right 10px center; /* Position the arrow */
+      background-size: 10px; /* Size of the arrow */
+
+      &:hover {
+        border-color: #0056b3; /* Darker border on hover */
+      }
+
+      &:focus {
+        outline: none; /* Remove default outline */
+        border-color: #0056b3; /* Change border color on focus */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow */
+      }
+    }
+
+  }
+}
+
+.label:has(label:focus-within) {
+  color: var(--accent-color-1);
+}
+
+.btn {
+  width:           100%;
+  display:         flex;
+  flex-direction:  row;
+  gap:             20px;
+  align-items:     center;
+  align-content:   center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 50px;
+  font-family: var(--ff-secondary), sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.solid-button {
+  background: var(--accent-color-1);
+
+  svg { stroke: var(--secondary-color); }
+
+  p { color: var(--secondary-color); }
+}
+
+.outline-button {
+  border: 2px solid var(--accent-color-1);
+
+  svg { stroke: var(--accent-color-1); }
+
+  p { color: var(--accent-color-1); }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--primary-color);
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 1000px 20px var(--background-primary);
+}

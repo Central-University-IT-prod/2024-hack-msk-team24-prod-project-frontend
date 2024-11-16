@@ -1,0 +1,12 @@
+@import 'stylesheets/variables.css';
+@import "stylesheets/normalize.css";
+@import "stylesheets/index.css";
+@import "stylesheets/fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  all: unset;
+}
